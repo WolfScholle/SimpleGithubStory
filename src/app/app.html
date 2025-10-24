@@ -32,6 +32,9 @@
 
 <section id="implementation">
   <button (click)="loadItems()">Load data</button>
+  @if (loading$ | async) {
+    <p>Loading...</p>
+  }
   <ul>
     @for (item of listItems; track $index) {
     <li>{{ item.id }}: {{ item.name }}</li>
