@@ -31,5 +31,13 @@
 </section>
 
 <section id="implementation">
-  <!-- TODO: implementation goes here -->
+  <button (click)="loadItems()">Load data</button>
+  @if (loading$ | async) {
+    <p>Loading...</p>
+  }
+  <ul>
+    @for (item of listItems; track $index) {
+    <li>{{ item.id }}: {{ item.name }}</li>
+    }
+  </ul>
 </section>
