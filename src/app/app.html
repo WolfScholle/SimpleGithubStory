@@ -32,4 +32,9 @@
 
 <section id="implementation">
   <button (click)="loadItems()">Load data</button>
+  <ul>
+    @for (item of listItems; track $index) {
+    <li>{{ item.id }}: {{ item.name }}</li>
+    }
+  </ul>
 </section>
