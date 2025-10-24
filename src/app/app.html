@@ -13,8 +13,8 @@
 
   <p>
     This is the use case that will be handled to showcase it. It's obviously held generically and
-    small scoped to easily understand it.
-
+    small scoped to easily understand it. What's out of scope?
+    
     What's out of scope? I will elaborate on git topics only. Coding itself and what is considered good code it not part of this presentation.
   </p>
 </section>
@@ -32,6 +32,9 @@
 
 <section id="implementation">
   <button (click)="loadItems()">Load data</button>
+  @if (loading$ | async) {
+  <p>Loading...</p>
+  }
   <ul>
     @for (item of listItems; track $index) {
     <li>{{ item.id }}: {{ item.name }}</li>
